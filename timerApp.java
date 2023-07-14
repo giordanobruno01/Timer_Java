@@ -11,13 +11,10 @@ public class timerApp {
         LocalTime actualTime = LocalTime.now();
         // System.out.print(formatter.format(actualTime)+"\r");
         
-        
-
-        
         System.out.println("Enter time in the format HH:MM:SS");
         String amountTime = scan.nextLine();
         timer time = new timer(amountTime);
         time.countTime();
-
+        
     }
 }

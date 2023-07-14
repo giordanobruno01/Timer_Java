@@ -1,1 +1,1 @@
- // System.out.print(formatter.format(actualTime)+"\r");
+Thread.sleep(1000)

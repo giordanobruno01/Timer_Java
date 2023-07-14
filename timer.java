@@ -1,9 +1,22 @@
 class timer {
 
-    String time = "";
+     String time = "";
 
     public timer(String time) {
         this.time = time;
+    }
+//input 02:59:60
+    public int[] decrease(int[] arr){
+        if(arr[1]==0 && arr[0]!=0){
+            arr[0]--;
+            arr[1] =60;
+        }
+        if(arr[2]==0 && arr[1]!=0){
+            arr[1]--;
+            arr[2]=60;
+        }
+
+        return arr;
     }
 
     public void countTime() {
@@ -19,9 +32,12 @@ class timer {
         }
         while(arr[0]!=0 || arr[1]!=0 || arr[2]!=0){
             try{
-            System.out.print(arr[0] +":"+arr[1]+":"+arr[2]+"\r");
+            System.out.print("\r"+arr[0] +":"+arr[1]+":"+arr[2]);
+            arr = decrease(arr);
             arr[2]--;
             Thread.sleep(1000);
+            System.out.print("\b ");
+            
         }catch(Exception e){
             
         }
