@@ -6,15 +6,27 @@ public class timerApp {
     public static void main(String[] args) {
 
         Scanner scan = new Scanner(System.in);
+
         // LocalTime actualTime = LocalTime.now();
-        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss");
-        LocalTime actualTime = LocalTime.now();
-        // System.out.print(formatter.format(actualTime)+"\r");
-        
-        System.out.println("Enter time in the format HH:MM:SS");
-        String amountTime = scan.nextLine();
-        timer time = new timer(amountTime);
-        time.countTime();
-        
+        // System.out.print(actualTime);
+        timer time = new timer();
+        while (true) {
+            System.out.println("1 - Timer\n2 - StopWatch ");
+            int pick = scan.nextInt();
+            if (pick == 1) {
+                System.out.println("Enter time in the format HH:MM:SS");
+                scan.nextLine();
+                String amountTime = scan.nextLine();
+                time.countTime(amountTime);
+
+            } else if (pick == 2) {
+                time.stopWatch();
+
+            } else {
+                System.out.println("Incorrect choice");
+            }
+
+        }
+
     }
 }
